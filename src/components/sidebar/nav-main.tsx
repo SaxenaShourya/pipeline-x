@@ -7,6 +7,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { Link, useLocation } from "react-router";
 
 const NavMain = ({
   items,
@@ -17,6 +18,8 @@ const NavMain = ({
     icon?: Icon;
   }[];
 }) => {
+  const location = useLocation();
+
   return (
     <SidebarGroup>
       <SidebarGroupContent className="flex flex-col gap-3">
@@ -29,15 +32,20 @@ const NavMain = ({
         {/* Navigation Menu */}
         <SidebarMenu>
           {items.map((item) => {
+            const isActive = location.pathname === item.url; // Check if the link is active
+
             return (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton
-                  tooltip={item.title}
-                  className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-normal transition-all duration-200 hover:bg-gray-100 cursor-pointer"
-                >
-                  {item.icon && <item.icon size={18} />}
-                  <span>{item.title}</span>
-                </SidebarMenuButton>
+                <Link to={item.url}>
+                  <SidebarMenuButton
+                    tooltip={item.title}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-normal transition-all duration-200 cursor-pointer 
+                    ${isActive ? "bg-neutral-200" : "hover:bg-muted"}`}
+                  >
+                    {item.icon && <item.icon size={18} />}
+                    <span>{item.title}</span>
+                  </SidebarMenuButton>
+                </Link>
               </SidebarMenuItem>
             );
           })}

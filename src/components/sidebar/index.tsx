@@ -1,13 +1,12 @@
 import * as React from "react";
 import {
   IconDashboard,
-  IconChartBar,
-  IconUsers,
   IconGraph,
   IconSettings,
   IconHelp,
   IconReport,
   IconDatabase,
+  IconPackage,
 } from "@tabler/icons-react";
 
 import NavMain from "@/components/sidebar/nav-main";
@@ -33,46 +32,37 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/",
       icon: IconDashboard,
     },
     {
-      title: "Sales Overview",
-      url: "#",
-      icon: IconChartBar,
-    },
-    {
-      title: "Clients & Deals",
-      url: "#",
-      icon: IconUsers,
+      title: "Products",
+      url: "/products",
+      icon: IconPackage,
     },
     {
       title: "Revenue Analytics",
-      url: "#",
+      url: "/analytics",
       icon: IconGraph,
     },
   ],
   navSecondary: [
     {
       title: "Settings",
-      url: "#",
       icon: IconSettings,
     },
     {
       title: "Help Center",
-      url: "#",
       icon: IconHelp,
     },
   ],
   navResources: [
     {
       name: "Sales Reports",
-      url: "#",
       icon: IconReport,
     },
     {
       name: "Client Database",
-      url: "#",
       icon: IconDatabase,
     },
   ],

@@ -5,7 +5,7 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
 const Container = ({ children }: { children: React.ReactNode }) => {
   return (
-    <SidebarProvider className="h-full lg:h-screen w-full overflow-hidden">
+    <SidebarProvider className="h-full w-full overflow-hidden">
       {/* Sidebar */}
       <AppSidebar variant="inset" />
 

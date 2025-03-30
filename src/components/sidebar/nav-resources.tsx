@@ -2,6 +2,7 @@ import {
   IconFolder,
   IconShare3,
   IconTrash,
+  IconClockHour4, // New "Coming Soon" Icon
   type Icon,
 } from "@tabler/icons-react";
 
@@ -21,14 +22,12 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { Link } from "react-router";
 
 const NavResources = ({
   items,
 }: {
   items: {
     name: string;
-    url: string;
     icon: Icon;
   }[];
 }) => {
@@ -36,20 +35,24 @@ const NavResources = ({
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <SidebarGroupLabel className="uppercase tracking-wider">
+      <SidebarGroupLabel className="uppercase tracking-wider flex items-center gap-1">
         Resources
+        <span className="text-xs text-neutral-400 flex items-center gap-1 tracking-normal capitalize">
+          (Coming Soon
+          <IconClockHour4 size={14} className="text-gray-400" />)
+        </span>
       </SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton
               asChild
-              className="flex items-center gap-2 px-3 py-2 rounded-md text-sm transition-all duration-200 hover:bg-gray-100"
+              className="flex items-center gap-2 px-3 py-2 rounded-md text-sm transition-all duration-200 hover:bg-gray-100 cursor-not-allowed"
             >
-              <Link to={item.url}>
+              <span className="text-neutral-600">
                 <item.icon size={18} />
                 <span>{item.name}</span>
-              </Link>
+              </span>
             </SidebarMenuButton>
             {/* Dropdown Menu */}
             <DropdownMenu>
@@ -88,4 +91,4 @@ const NavResources = ({
   );
 };
 
-export default NavResources
+export default NavResources;
