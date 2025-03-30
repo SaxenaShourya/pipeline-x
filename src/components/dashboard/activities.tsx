@@ -14,7 +14,7 @@ const activities = [
 
 const Activities = () => {
   return (
-    <Card className="p-0 shadow-none border-2 rounded-md w-full flex flex-col flex-1 gap-3">
+    <Card className="p-0 shadow-none border-2 rounded-md w-full h-full flex flex-col gap-3">
       <h2 className="pt-4 pl-4 text-sm font-semibold text-gray-800">Recent Activity</h2>
 
       <ScrollArea className="h-[205px] px-3 mx-1">

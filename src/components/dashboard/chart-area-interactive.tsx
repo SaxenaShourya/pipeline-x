@@ -73,7 +73,7 @@ const ChartAreaInteractive = () => {
   return (
     <Card className="p-0 shadow-none border-2 rounded-md">
       <CardHeader className="flex flex-col items-stretch space-y-0 border-b !p-0 sm:flex-row">
-        <div className="flex flex-1 flex-col justify-center gap-1 px-6">
+        <div className="flex flex-1 flex-col justify-center gap-1 px-4 pt-4 lg:pt-0 lg:pb-0 pb-2">
           <CardTitle>Sales Overview</CardTitle>
           <CardDescription>
             Showing total revenue and profit for the last month

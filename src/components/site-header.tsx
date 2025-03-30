@@ -27,9 +27,9 @@ const SiteHeader = () => {
         <Separator orientation="vertical" className="mx-2 !h-4" />
 
         {/* Breadcrumbs */}
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
+        <Breadcrumb className="hidden min-[385px]:block">
+          <BreadcrumbList className="gap-1">
+            <BreadcrumbItem className="text-xs md:text-sm">
               <BreadcrumbLink href="/">Dashboard</BreadcrumbLink>
             </BreadcrumbItem>
 
@@ -40,7 +40,7 @@ const SiteHeader = () => {
               return (
                 <React.Fragment key={href}>
                   <BreadcrumbSeparator />
-                  <BreadcrumbItem className="capitalize">
+                  <BreadcrumbItem className="capitalize text-xs md:text-sm">
                     {isLast ? (
                       <BreadcrumbPage>{decodeURIComponent(segment)}</BreadcrumbPage>
                     ) : (

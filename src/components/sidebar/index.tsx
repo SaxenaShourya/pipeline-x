@@ -27,7 +27,7 @@ const data = {
   user: {
     name: "Shourya Saxena",
     email: "saxenashourya000@gmail.com",
-    avatar: "/avatars/shourya.jpg",
+    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   navMain: [
     {

@@ -11,9 +11,9 @@ const Dashboard = () => {
   return (
     <div className="h-full flex flex-1 flex-col">
       <div className="h-full @container/main flex flex-1 flex-col gap-2">
-        <div className="h-full grid grid-cols-1 lg:grid-cols-4 gap-4 px-4 py-2 md:py-3">
+        <div className="h-full grid grid-cols-1 2xl:grid-cols-4 gap-4 px-4 py-2 md:py-3">
           {/* Main Content */}
-          <div className="h-full flex flex-col gap-4 lg:col-span-3">
+          <div className="h-full flex flex-col gap-4 2xl:col-span-3">
             <Suspense
               fallback={<Skeleton className="h-64 w-full rounded-md" />}
             >
@@ -30,7 +30,7 @@ const Dashboard = () => {
           </div>
 
           {/* Sidebar */}
-          <aside className="hidden lg:flex flex-col gap-3 overflow-hidden flex-1">
+          <aside className="flex flex-col gap-3 overflow-hidden flex-1">
             <Suspense
               fallback={<Skeleton className="h-84 w-full rounded-md" />}
             >
@@ -39,7 +39,7 @@ const Dashboard = () => {
 
             <Suspense
               fallback={
-                <Skeleton className="flex-1 h-full w-full rounded-md" />
+                <Skeleton className="h-full w-full rounded-md" />
               }
             >
               <Activities />

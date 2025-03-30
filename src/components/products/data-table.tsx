@@ -397,10 +397,10 @@ export function DataTable({
       defaultValue="outline"
       className="w-full flex-col justify-start gap-2 py-2"
     >
-      <div className="flex items-center justify-between px-4 lg:px-6">
+      <div className="flex flex-col sm:flex-row space-y-3 my-3 sm:space-y-0 sm:my-0 sm:items-center justify-between px-4 lg:px-6">
         <div>
-          <h2 className="text-lg font-semibold">Product Inventory</h2>
-          <p className="text-sm text-gray-500">
+          <h2 className="text-base sm:text-lg font-semibold">Product Inventory</h2>
+          <p className="text-xs sm:text-sm text-gray-500">
             Manage and track all available products
           </p>
         </div>
