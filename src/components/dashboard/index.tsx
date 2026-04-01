@@ -9,41 +9,43 @@ const Activities = lazy(() => import("./activities"));
 
 const Dashboard = () => {
   return (
-    <div className="h-full flex flex-1 flex-col">
-      <div className="h-full @container/main flex flex-1 flex-col gap-2">
-        <div className="h-full grid grid-cols-1 2xl:grid-cols-4 gap-4 px-4 py-2 md:py-3">
+    <div className="flex flex-col h-full overflow-auto">
+      <div className="flex-1 @container/main flex flex-col">
+        <div className="flex-1 grid grid-cols-1 2xl:grid-cols-4 gap-4 px-4 py-2 md:py-3">
           {/* Main Content */}
-          <div className="h-full flex flex-col gap-4 2xl:col-span-3">
+          <div className="flex flex-col gap-4 2xl:col-span-3 min-h-0">
             <Suspense
               fallback={<Skeleton className="h-64 w-full rounded-md" />}
             >
               <SectionCards />
             </Suspense>
 
-            <Suspense
-              fallback={
-                <Skeleton className="h-full flex-1 w-full rounded-md" />
-              }
-            >
-              <ChartAreaInteractive />
-            </Suspense>
+            {/* Chart takes remaining height */}
+            <div className="flex-1 min-h-0">
+              <Suspense
+                fallback={<Skeleton className="h-full w-full rounded-md" />}
+              >
+                <ChartAreaInteractive />
+              </Suspense>
+            </div>
           </div>
 
           {/* Sidebar */}
-          <aside className="flex flex-col gap-3 overflow-hidden flex-1">
+          <aside className="flex flex-col gap-3 min-h-0">
             <Suspense
-              fallback={<Skeleton className="h-84 w-full rounded-md" />}
+              fallback={<Skeleton className="h-64 w-full rounded-md" />}
             >
               <TopSellingProducts />
             </Suspense>
 
-            <Suspense
-              fallback={
-                <Skeleton className="h-full w-full rounded-md" />
-              }
-            >
-              <Activities />
-            </Suspense>
+            {/* Activities fills remaining space */}
+            <div className="flex-1 min-h-0">
+              <Suspense
+                fallback={<Skeleton className="h-full w-full rounded-md" />}
+              >
+                <Activities />
+              </Suspense>
+            </div>
           </aside>
         </div>
       </div>

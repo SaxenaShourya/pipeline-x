@@ -21,7 +21,7 @@ const SiteHeader = () => {
     .filter((segment) => segment !== "");
 
   return (
-    <header className="flex h-[--header-height] shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-[--header-height] py-1">
+    <header className="flex h-[--header-height] shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-[--header-height] py-2">
       <div className="flex w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
         <SidebarTrigger className="-ml-1" />
         <Separator orientation="vertical" className="mx-2 !h-4" />
@@ -42,7 +42,9 @@ const SiteHeader = () => {
                   <BreadcrumbSeparator />
                   <BreadcrumbItem className="capitalize text-xs md:text-sm">
                     {isLast ? (
-                      <BreadcrumbPage>{decodeURIComponent(segment)}</BreadcrumbPage>
+                      <BreadcrumbPage>
+                        {decodeURIComponent(segment)}
+                      </BreadcrumbPage>
                     ) : (
                       <BreadcrumbLink href={href}>
                         {decodeURIComponent(segment)}
@@ -58,13 +60,21 @@ const SiteHeader = () => {
         {/* Social Links */}
         <div className="ml-auto flex items-center gap-2">
           <Button variant="ghost" asChild size="sm">
-            <Link to="https://github.com/SaxenaShourya" target="_blank" rel="noopener noreferrer">
+            <Link
+              to="https://github.com/SaxenaShourya"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GitHub
             </Link>
           </Button>
-          <Button variant="ghost" asChild size="sm">
-            <Link to="https://linkedin.com/in/the-webfluencer" target="_blank" rel="noopener noreferrer">
-              LinkedIn
+          <Button asChild size="sm">
+            <Link
+              to="https://webfluencestudios.in"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Built by Webfluence
             </Link>
           </Button>
         </div>

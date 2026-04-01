@@ -26,7 +26,7 @@ import { Link } from "react-router";
 const data = {
   user: {
     name: "Shourya Saxena",
-    email: "saxenashourya000@gmail.com",
+    email: "work@webfluencestudios.in",
     avatar: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   navMain: [

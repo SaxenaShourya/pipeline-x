@@ -60,18 +60,19 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 const ChartAreaInteractive = () => {
-  const [activeChart, setActiveChart] = React.useState<keyof typeof chartConfig>("revenue");
+  const [activeChart, setActiveChart] =
+    React.useState<keyof typeof chartConfig>("revenue");
 
   const total = React.useMemo(
     () => ({
       revenue: salesData.reduce((acc, curr) => acc + curr.revenue, 0),
       profit: salesData.reduce((acc, curr) => acc + curr.profit, 0),
     }),
-    []
+    [],
   );
 
   return (
-    <Card className="p-0 shadow-none border-2 rounded-md">
+    <Card className="h-full flex flex-col p-0 shadow-none border-2 rounded-md">
       <CardHeader className="flex flex-col items-stretch space-y-0 border-b !p-0 sm:flex-row">
         <div className="flex flex-1 flex-col justify-center gap-1 px-4 pt-4 lg:pt-0 lg:pb-0 pb-2">
           <CardTitle>Sales Overview</CardTitle>
@@ -100,10 +101,10 @@ const ChartAreaInteractive = () => {
           })}
         </div>
       </CardHeader>
-      <CardContent className="px-2 sm:px-4">
+      <CardContent className="px-2 sm:px-4 flex-1 min-h-0">
         <ChartContainer
           config={chartConfig}
-          className="aspect-auto h-[250px] w-full"
+          className="w-full h-full max-h-[35vh]"
         >
           <BarChart
             accessibilityLayer
@@ -149,6 +150,6 @@ const ChartAreaInteractive = () => {
       </CardContent>
     </Card>
   );
-}
+};
 
 export default ChartAreaInteractive;
